@@ -14,17 +14,17 @@ class LegalEntityAgreementRetrievalResponseType
     /**
      * @property string $legalEntityId
      */
-    private $legalEntityId = null;
+    public $legalEntityId = null;
 
     /**
      * @property integer $transactionId
      */
-    private $transactionId = null;
+    public $transactionId = null;
 
     /**
      * @property \src\generated\LegalEntityAgreementType[] $agreements
      */
-    private $agreements = null;
+    public $agreements = null;
 
     /**
      * Gets as legalEntityId

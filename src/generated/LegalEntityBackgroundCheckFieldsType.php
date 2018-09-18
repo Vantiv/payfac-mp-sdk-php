@@ -14,17 +14,17 @@ class LegalEntityBackgroundCheckFieldsType
     /**
      * @property string $legalEntityName
      */
-    private $legalEntityName = null;
+    public $legalEntityName = null;
 
     /**
      * @property string $legalEntityType
      */
-    private $legalEntityType = null;
+    public $legalEntityType = null;
 
     /**
      * @property string $taxId
      */
-    private $taxId = null;
+    public $taxId = null;
 
     /**
      * Gets as legalEntityName

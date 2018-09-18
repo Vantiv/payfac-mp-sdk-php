@@ -14,12 +14,12 @@ class PrincipalResultType
     /**
      * @property \src\generated\PrincipalVerificationResultType $verificationResult
      */
-    private $verificationResult = null;
+    public $verificationResult = null;
 
     /**
      * @property string $backgroundCheckDecisionNotes
      */
-    private $backgroundCheckDecisionNotes = null;
+    public $backgroundCheckDecisionNotes = null;
 
     /**
      * Gets as verificationResult

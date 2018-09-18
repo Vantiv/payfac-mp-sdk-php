@@ -11,7 +11,7 @@ class ErrorsAType
     /**
      * @property string[] $error
      */
-    private $error = array(
+    public $error = array(
         
     );
 

@@ -1,10 +1,16 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: araju
+ * Date: 9/18/18
+ * Time: 10:50 AM
+ */
 
 namespace src\utils;
 
+
 class XmlParser
 {
-
     public static function domParser($xml)
     {
         $doc = new \DOMDocument();

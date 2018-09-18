@@ -14,7 +14,7 @@ class BusinessResultType
     /**
      * @property \src\generated\BusinessVerificationResultType $verificationResult
      */
-    private $verificationResult = null;
+    public $verificationResult = null;
 
     /**
      * Gets as verificationResult

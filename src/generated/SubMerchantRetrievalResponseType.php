@@ -14,42 +14,42 @@ class SubMerchantRetrievalResponseType extends SubMerchantCreateRequestType
     /**
      * @property string $subMerchantId
      */
-    private $subMerchantId = null;
+    public $subMerchantId = null;
 
     /**
      * @property string $amexSellerId
      */
-    private $amexSellerId = null;
+    public $amexSellerId = null;
 
     /**
      * @property boolean $disabled
      */
-    private $disabled = null;
+    public $disabled = null;
 
     /**
      * @property string $transactionId
      */
-    private $transactionId = null;
+    public $transactionId = null;
 
     /**
      * @property string $merchantIdentString
      */
-    private $merchantIdentString = null;
+    public $merchantIdentString = null;
 
     /**
      * @property \src\generated\SubMerchantCredentialsType $credentials
      */
-    private $credentials = null;
+    public $credentials = null;
 
     /**
      * @property \src\generated\PaypageCredentialType[] $paypageCredentials
      */
-    private $paypageCredentials = null;
+    public $paypageCredentials = null;
 
     /**
      * @property \DateTime $updateDate
      */
-    private $updateDate = null;
+    public $updateDate = null;
 
     /**
      * Gets as subMerchantId

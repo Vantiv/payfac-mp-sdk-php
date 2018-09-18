@@ -14,57 +14,57 @@ class LegalEntityRetrievalResponseType extends LegalEntityCreateRequestType
     /**
      * @property string $overallStatus
      */
-    private $overallStatus = null;
+    public $overallStatus = null;
 
     /**
      * @property \src\generated\LegalEntityPrincipalType $legalEntityPrincipal
      */
-    private $legalEntityPrincipal = null;
+    public $legalEntityPrincipal = null;
 
     /**
      * @property string $legalEntityId
      */
-    private $legalEntityId = null;
+    public $legalEntityId = null;
 
     /**
      * @property integer $responseCode
      */
-    private $responseCode = null;
+    public $responseCode = null;
 
     /**
      * @property string $responseDescription
      */
-    private $responseDescription = null;
+    public $responseDescription = null;
 
     /**
      * @property \src\generated\BackgroundCheckResults $backgroundCheckResults
      */
-    private $backgroundCheckResults = null;
+    public $backgroundCheckResults = null;
 
     /**
      * @property string $transactionId
      */
-    private $transactionId = null;
+    public $transactionId = null;
 
     /**
      * @property \DateTime $updateDate
      */
-    private $updateDate = null;
+    public $updateDate = null;
 
     /**
      * @property \DateTime $decisionDate
      */
-    private $decisionDate = null;
+    public $decisionDate = null;
 
     /**
      * @property string $tinValidationStatus
      */
-    private $tinValidationStatus = null;
+    public $tinValidationStatus = null;
 
     /**
      * @property boolean $subMerchantProcessingStatus
      */
-    private $subMerchantProcessingStatus = null;
+    public $subMerchantProcessingStatus = null;
 
     /**
      * Gets as overallStatus

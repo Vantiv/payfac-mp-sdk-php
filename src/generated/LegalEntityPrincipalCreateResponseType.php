@@ -14,17 +14,17 @@ class LegalEntityPrincipalCreateResponseType extends ResponseType
     /**
      * @property integer $principalId
      */
-    private $principalId = null;
+    public $principalId = null;
 
     /**
      * @property string $firstName
      */
-    private $firstName = null;
+    public $firstName = null;
 
     /**
      * @property string $lastName
      */
-    private $lastName = null;
+    public $lastName = null;
 
     /**
      * Gets as principalId

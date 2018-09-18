@@ -14,37 +14,37 @@ class LegalEntityAgreementType
     /**
      * @property string $legalEntityAgreementType
      */
-    private $legalEntityAgreementType = null;
+    public $legalEntityAgreementType = null;
 
     /**
      * @property string $agreementVersion
      */
-    private $agreementVersion = null;
+    public $agreementVersion = null;
 
     /**
      * @property string $userFullName
      */
-    private $userFullName = null;
+    public $userFullName = null;
 
     /**
      * @property string $userSystemName
      */
-    private $userSystemName = null;
+    public $userSystemName = null;
 
     /**
      * @property string $userIPAddress
      */
-    private $userIPAddress = null;
+    public $userIPAddress = null;
 
     /**
      * @property boolean $manuallyEntered
      */
-    private $manuallyEntered = null;
+    public $manuallyEntered = null;
 
     /**
      * @property \DateTime $acceptanceDateTime
      */
-    private $acceptanceDateTime = null;
+    public $acceptanceDateTime = null;
 
     /**
      * Gets as legalEntityAgreementType

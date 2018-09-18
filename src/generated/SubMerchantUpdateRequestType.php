@@ -14,102 +14,102 @@ class SubMerchantUpdateRequestType
     /**
      * @property string $merchantName
      */
-    private $merchantName = null;
+    public $merchantName = null;
 
     /**
      * @property string $amexMid
      */
-    private $amexMid = null;
+    public $amexMid = null;
 
     /**
      * @property string $discoverConveyedMid
      */
-    private $discoverConveyedMid = null;
+    public $discoverConveyedMid = null;
 
     /**
      * @property string $url
      */
-    private $url = null;
+    public $url = null;
 
     /**
      * @property string $customerServiceNumber
      */
-    private $customerServiceNumber = null;
+    public $customerServiceNumber = null;
 
     /**
      * @property string $hardCodedBillingDescriptor
      */
-    private $hardCodedBillingDescriptor = null;
+    public $hardCodedBillingDescriptor = null;
 
     /**
      * @property integer $maxTransactionAmount
      */
-    private $maxTransactionAmount = null;
+    public $maxTransactionAmount = null;
 
     /**
      * @property string $bankRoutingNumber
      */
-    private $bankRoutingNumber = null;
+    public $bankRoutingNumber = null;
 
     /**
      * @property string $bankAccountNumber
      */
-    private $bankAccountNumber = null;
+    public $bankAccountNumber = null;
 
     /**
      * @property string $pspMerchantId
      */
-    private $pspMerchantId = null;
+    public $pspMerchantId = null;
 
     /**
      * @property string $purchaseCurrency
      */
-    private $purchaseCurrency = null;
+    public $purchaseCurrency = null;
 
     /**
      * @property \src\generated\AddressUpdatableType $address
      */
-    private $address = null;
+    public $address = null;
 
     /**
      * @property \src\generated\SubMerchantPrimaryContactUpdatableType $primaryContact
      */
-    private $primaryContact = null;
+    public $primaryContact = null;
 
     /**
      * @property boolean $disable
      */
-    private $disable = null;
+    public $disable = null;
 
     /**
      * @property \src\generated\SubMerchantFraudFeatureType $fraud
      */
-    private $fraud = null;
+    public $fraud = null;
 
     /**
      * @property \src\generated\SubMerchantAmexAcquiredFeatureType $amexAcquired
      */
-    private $amexAcquired = null;
+    public $amexAcquired = null;
 
     /**
      * @property \src\generated\SubMerchantECheckFeatureType $eCheck
      */
-    private $eCheck = null;
+    public $eCheck = null;
 
     /**
      * @property \src\generated\SubMerchantFundingType $subMerchantFunding
      */
-    private $subMerchantFunding = null;
+    public $subMerchantFunding = null;
 
     /**
      * @property string $taxAuthority
      */
-    private $taxAuthority = null;
+    public $taxAuthority = null;
 
     /**
      * @property string $taxAuthorityState
      */
-    private $taxAuthorityState = null;
+    public $taxAuthorityState = null;
 
     /**
      * Gets as merchantName

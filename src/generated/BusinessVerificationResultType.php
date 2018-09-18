@@ -14,27 +14,27 @@ class BusinessVerificationResultType
     /**
      * @property \src\generated\BusinessScoreType $overallScore
      */
-    private $overallScore = null;
+    public $overallScore = null;
 
     /**
      * @property \src\generated\NameAddressTaxIdAssociationType $nameAddressTaxIdAssociation
      */
-    private $nameAddressTaxIdAssociation = null;
+    public $nameAddressTaxIdAssociation = null;
 
     /**
      * @property \src\generated\BusinessNameAddressPhoneAssociationType $nameAddressPhoneAssociation
      */
-    private $nameAddressPhoneAssociation = null;
+    public $nameAddressPhoneAssociation = null;
 
     /**
      * @property \src\generated\BusinessVerificationIndicatorsType $verificationIndicators
      */
-    private $verificationIndicators = null;
+    public $verificationIndicators = null;
 
     /**
      * @property \src\generated\PotentialRiskIndicatorType[] $riskIndicators
      */
-    private $riskIndicators = null;
+    public $riskIndicators = null;
 
     /**
      * Gets as overallScore

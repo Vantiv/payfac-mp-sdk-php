@@ -14,47 +14,47 @@ class LegalEntityUpdateRequestType
     /**
      * @property \src\generated\AddressUpdatableType $address
      */
-    private $address = null;
+    public $address = null;
 
     /**
      * @property string $contactPhone
      */
-    private $contactPhone = null;
+    public $contactPhone = null;
 
     /**
      * @property string $doingBusinessAs
      */
-    private $doingBusinessAs = null;
+    public $doingBusinessAs = null;
 
     /**
      * @property integer $annualCreditCardSalesVolume
      */
-    private $annualCreditCardSalesVolume = null;
+    public $annualCreditCardSalesVolume = null;
 
     /**
      * @property boolean $hasAcceptedCreditCards
      */
-    private $hasAcceptedCreditCards = null;
+    public $hasAcceptedCreditCards = null;
 
     /**
      * @property \src\generated\LegalEntityPrincipalUpdatableType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * @property \src\generated\LegalEntityBackgroundCheckFieldsType $backgroundCheckFields
      */
-    private $backgroundCheckFields = null;
+    public $backgroundCheckFields = null;
 
     /**
      * @property string $legalEntityOwnershipType
      */
-    private $legalEntityOwnershipType = null;
+    public $legalEntityOwnershipType = null;
 
     /**
      * @property string $yearsInBusiness
      */
-    private $yearsInBusiness = null;
+    public $yearsInBusiness = null;
 
     /**
      * Gets as address

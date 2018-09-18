@@ -14,67 +14,67 @@ class LegalEntityPrincipalType
     /**
      * @property integer $principalId
      */
-    private $principalId = null;
+    public $principalId = null;
 
     /**
      * @property string $title
      */
-    private $title = null;
+    public $title = null;
 
     /**
      * @property string $firstName
      */
-    private $firstName = null;
+    public $firstName = null;
 
     /**
      * @property string $lastName
      */
-    private $lastName = null;
+    public $lastName = null;
 
     /**
      * @property string $emailAddress
      */
-    private $emailAddress = null;
+    public $emailAddress = null;
 
     /**
      * @property string $ssn
      */
-    private $ssn = null;
+    public $ssn = null;
 
     /**
      * @property string $contactPhone
      */
-    private $contactPhone = null;
+    public $contactPhone = null;
 
     /**
-     * @property \DateTime $dateOfBirth
+     * @property string $dateOfBirth
      */
-    private $dateOfBirth = null;
+    public $dateOfBirth = null;
 
     /**
      * @property string $driversLicense
      */
-    private $driversLicense = null;
+    public $driversLicense = null;
 
     /**
      * @property string $driversLicenseState
      */
-    private $driversLicenseState = null;
+    public $driversLicenseState = null;
 
     /**
      * @property \src\generated\PrincipalAddressType $address
      */
-    private $address = null;
+    public $address = null;
 
     /**
      * @property integer $stakePercent
      */
-    private $stakePercent = null;
+    public $stakePercent = null;
 
     /**
      * @property \src\generated\PrincipalResultType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * Gets as principalId
@@ -243,10 +243,10 @@ class LegalEntityPrincipalType
     /**
      * Sets a new dateOfBirth
      *
-     * @param \DateTime $dateOfBirth
+     * @param string $dateOfBirth
      * @return self
      */
-    public function setDateOfBirth(\DateTime $dateOfBirth)
+    public function setDateOfBirth($dateOfBirth)
     {
         $this->dateOfBirth = $dateOfBirth;
         return $this;

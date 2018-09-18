@@ -14,12 +14,12 @@ class PrincipalScoreType
     /**
      * @property integer $score
      */
-    private $score = null;
+    public $score = null;
 
     /**
      * @property string $description
      */
-    private $description = null;
+    public $description = null;
 
     /**
      * Gets as score

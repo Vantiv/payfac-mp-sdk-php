@@ -14,57 +14,57 @@ class LienResultType
     /**
      * @property string $lienType
      */
-    private $lienType = null;
+    public $lienType = null;
 
     /**
      * @property integer $releasedCount
      */
-    private $releasedCount = null;
+    public $releasedCount = null;
 
     /**
      * @property integer $unreleasedCount
      */
-    private $unreleasedCount = null;
+    public $unreleasedCount = null;
 
     /**
      * @property string $companyName
      */
-    private $companyName = null;
+    public $companyName = null;
 
     /**
      * @property string $streetAddress1
      */
-    private $streetAddress1 = null;
+    public $streetAddress1 = null;
 
     /**
      * @property string $streetAddress2
      */
-    private $streetAddress2 = null;
+    public $streetAddress2 = null;
 
     /**
      * @property string $city
      */
-    private $city = null;
+    public $city = null;
 
     /**
      * @property string $state
      */
-    private $state = null;
+    public $state = null;
 
     /**
      * @property string $zip
      */
-    private $zip = null;
+    public $zip = null;
 
     /**
      * @property string $zip4
      */
-    private $zip4 = null;
+    public $zip4 = null;
 
     /**
      * @property \DateTime $filingDate
      */
-    private $filingDate = null;
+    public $filingDate = null;
 
     /**
      * Gets as lienType

@@ -6,7 +6,7 @@
  * Time: 4:12 PM
  */
 
-namespace src;
+namespace src\exceptions;
 
 
 class PayFacWebException extends \Exception

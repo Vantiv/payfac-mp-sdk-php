@@ -14,27 +14,27 @@ class PrincipalVerificationIndicatorsType
     /**
      * @property boolean $nameVerified
      */
-    private $nameVerified = null;
+    public $nameVerified = null;
 
     /**
      * @property boolean $addressVerified
      */
-    private $addressVerified = null;
+    public $addressVerified = null;
 
     /**
      * @property boolean $phoneVerified
      */
-    private $phoneVerified = null;
+    public $phoneVerified = null;
 
     /**
      * @property boolean $ssnVerified
      */
-    private $ssnVerified = null;
+    public $ssnVerified = null;
 
     /**
      * @property boolean $dobVerified
      */
-    private $dobVerified = null;
+    public $dobVerified = null;
 
     /**
      * Gets as nameVerified

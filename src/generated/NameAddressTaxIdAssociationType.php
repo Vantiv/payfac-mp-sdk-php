@@ -14,12 +14,12 @@ class NameAddressTaxIdAssociationType
     /**
      * @property string $code
      */
-    private $code = null;
+    public $code = null;
 
     /**
      * @property string $description
      */
-    private $description = null;
+    public $description = null;
 
     /**
      * Gets as code

@@ -14,17 +14,17 @@ class PrincipalCreateResponseType
     /**
      * @property string $legalEntityId
      */
-    private $legalEntityId = null;
+    public $legalEntityId = null;
 
     /**
      * @property \src\generated\LegalEntityPrincipalCreateResponseWithResponseFieldsType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * @property integer $transactionId
      */
-    private $transactionId = null;
+    public $transactionId = null;
 
     /**
      * Gets as legalEntityId

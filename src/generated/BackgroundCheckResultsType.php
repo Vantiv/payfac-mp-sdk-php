@@ -14,32 +14,32 @@ class BackgroundCheckResultsType
     /**
      * @property \src\generated\BusinessResultType $business
      */
-    private $business = null;
+    public $business = null;
 
     /**
      * @property \src\generated\PrincipalResultType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * @property \src\generated\BusinessToPrincipalAssociationType $businessToPrincipalAssociation
      */
-    private $businessToPrincipalAssociation = null;
+    public $businessToPrincipalAssociation = null;
 
     /**
      * @property string $backgroundCheckDecisionNotes
      */
-    private $backgroundCheckDecisionNotes = null;
+    public $backgroundCheckDecisionNotes = null;
 
     /**
      * @property \src\generated\BankruptcyResultType $bankruptcyData
      */
-    private $bankruptcyData = null;
+    public $bankruptcyData = null;
 
     /**
      * @property \src\generated\LienResultType $lienResult
      */
-    private $lienResult = null;
+    public $lienResult = null;
 
     /**
      * Gets as business

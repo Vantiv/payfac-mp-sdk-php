@@ -50,9 +50,9 @@ function initialize($urlList)
 {
     $line = array();
 
-    $handle = @fopen('./chargeback_SDK_config.ini', "w");
+    $handle = @fopen('./MP_SDK_config.ini', "w");
     if ($handle) {
-        print "Welcome to Vantiv eCommerce PHP Chargeback SDK" . PHP_EOL;
+        print "Welcome to Vantiv eCommerce PHP MP API SDK" . PHP_EOL;
         print "Please input your user name: ";
         $line['username'] = formatConfigValue(STDIN);
         print "Please input your password: ";

@@ -11,7 +11,7 @@ class AgreementsAType
     /**
      * @property \src\generated\LegalEntityAgreementType[] $legalEntityAgreement
      */
-    private $legalEntityAgreement = array(
+    public $legalEntityAgreement = array(
         
     );
 

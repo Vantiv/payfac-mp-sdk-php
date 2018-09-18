@@ -14,7 +14,7 @@ class ApprovedMccResponseType extends ResponseType
     /**
      * @property string[] $approvedMccs
      */
-    private $approvedMccs = null;
+    public $approvedMccs = null;
 
     /**
      * Adds as approvedMcc

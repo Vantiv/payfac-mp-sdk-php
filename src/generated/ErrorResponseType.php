@@ -14,7 +14,7 @@ class ErrorResponseType extends ResponseType
     /**
      * @property string[] $errors
      */
-    private $errors = null;
+    public $errors = null;
 
     /**
      * Adds as error

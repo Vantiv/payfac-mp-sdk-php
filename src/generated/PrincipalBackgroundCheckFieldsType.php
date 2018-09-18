@@ -14,32 +14,32 @@ class PrincipalBackgroundCheckFieldsType
     /**
      * @property string $firstName
      */
-    private $firstName = null;
+    public $firstName = null;
 
     /**
      * @property string $lastName
      */
-    private $lastName = null;
+    public $lastName = null;
 
     /**
      * @property string $ssn
      */
-    private $ssn = null;
+    public $ssn = null;
 
     /**
      * @property \DateTime $dateOfBirth
      */
-    private $dateOfBirth = null;
+    public $dateOfBirth = null;
 
     /**
      * @property string $driversLicense
      */
-    private $driversLicense = null;
+    public $driversLicense = null;
 
     /**
      * @property string $driversLicenseState
      */
-    private $driversLicenseState = null;
+    public $driversLicenseState = null;
 
     /**
      * Gets as firstName

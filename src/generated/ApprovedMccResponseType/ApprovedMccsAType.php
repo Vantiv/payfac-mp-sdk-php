@@ -11,7 +11,7 @@ class ApprovedMccsAType
     /**
      * @property string[] $approvedMcc
      */
-    private $approvedMcc = array(
+    public $approvedMcc = array(
         
     );
 

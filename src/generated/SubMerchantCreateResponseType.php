@@ -14,37 +14,37 @@ class SubMerchantCreateResponseType extends ResponseType
     /**
      * @property boolean $duplicate
      */
-    private $duplicate = null;
+    public $duplicate = null;
 
     /**
      * @property string $subMerchantId
      */
-    private $subMerchantId = null;
+    public $subMerchantId = null;
 
     /**
      * @property string $merchantIdentString
      */
-    private $merchantIdentString = null;
+    public $merchantIdentString = null;
 
     /**
      * @property \src\generated\SubMerchantRetrievalResponseType $originalSubMerchant
      */
-    private $originalSubMerchant = null;
+    public $originalSubMerchant = null;
 
     /**
      * @property \src\generated\SubMerchantCredentialsType $credentials
      */
-    private $credentials = null;
+    public $credentials = null;
 
     /**
      * @property \src\generated\PaypageCredentialType[] $paypageCredentials
      */
-    private $paypageCredentials = null;
+    public $paypageCredentials = null;
 
     /**
      * @property string $amexSellerId
      */
-    private $amexSellerId = null;
+    public $amexSellerId = null;
 
     /**
      * Gets as duplicate

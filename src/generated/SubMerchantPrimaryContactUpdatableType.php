@@ -14,22 +14,22 @@ class SubMerchantPrimaryContactUpdatableType
     /**
      * @property string $firstName
      */
-    private $firstName = null;
+    public $firstName = null;
 
     /**
      * @property string $lastName
      */
-    private $lastName = null;
+    public $lastName = null;
 
     /**
      * @property string $emailAddress
      */
-    private $emailAddress = null;
+    public $emailAddress = null;
 
     /**
      * @property string $phone
      */
-    private $phone = null;
+    public $phone = null;
 
     /**
      * Gets as firstName

@@ -14,27 +14,27 @@ class LegalEntityPrincipalCreateResponseWithResponseFieldsType
     /**
      * @property integer $principalId
      */
-    private $principalId = null;
+    public $principalId = null;
 
     /**
      * @property string $firstName
      */
-    private $firstName = null;
+    public $firstName = null;
 
     /**
      * @property string $lastName
      */
-    private $lastName = null;
+    public $lastName = null;
 
     /**
      * @property integer $responseCode
      */
-    private $responseCode = null;
+    public $responseCode = null;
 
     /**
      * @property string $responseDescription
      */
-    private $responseDescription = null;
+    public $responseDescription = null;
 
     /**
      * Gets as principalId

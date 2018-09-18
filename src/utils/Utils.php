@@ -6,8 +6,7 @@
  * Time: 3:27 PM
  */
 
-namespace src;
-
+namespace src\utils;
 
 class Utils
 {
@@ -16,23 +15,29 @@ class Utils
     {
         $config_array = null;
 
-        $ini_file = realpath(dirname(__FILE__)) . '/payfac_SDK_config.ini';
+        $ini_file = realpath(dirname(__FILE__)) . '/../MP_SDK_config.ini';
 
         if (!file_exists($ini_file)) {
             throw new PayFacExceptions("Could not fetch config file. Please check the config file or run Setup.php.");
         }
 
-        @$config_array = parse_ini_file('payfac_SDK_config.ini');
+        @$config_array = parse_ini_file($ini_file);
 
 
         if (empty($config_array)) {
+            //print "config array is empty";
             $config_array = array();
         }
 
         $names = explode(',', CONFIG_LIST);
+        //print "printing names\n";
         foreach ($names as $name) {
+
+
+
             if (isset($data[$name])) {
                 $config[$name] = $data[$name];
+                //print $name."\t".$config[$name]."\n";
 
             } else {
                 if ($name == 'timeout') {
@@ -42,6 +47,7 @@ class Utils
                         throw new \InvalidArgumentException("Missing Field /$name/");
                     }
                     $config[$name] = $config_array[$name];
+                    //print $name."\t".$config[$name]."\n";
                 }
             }
         }

@@ -14,27 +14,27 @@ class PrincipalVerificationResultType
     /**
      * @property \src\generated\PrincipalScoreType $overallScore
      */
-    private $overallScore = null;
+    public $overallScore = null;
 
     /**
      * @property \src\generated\NameAddressSsnAssociationType $nameAddressSsnAssociation
      */
-    private $nameAddressSsnAssociation = null;
+    public $nameAddressSsnAssociation = null;
 
     /**
      * @property \src\generated\PrincipalNameAddressPhoneAssociationType $nameAddressPhoneAssociation
      */
-    private $nameAddressPhoneAssociation = null;
+    public $nameAddressPhoneAssociation = null;
 
     /**
      * @property \src\generated\PrincipalVerificationIndicatorsType $verificationIndicators
      */
-    private $verificationIndicators = null;
+    public $verificationIndicators = null;
 
     /**
      * @property \src\generated\PotentialRiskIndicatorType[] $riskIndicators
      */
-    private $riskIndicators = null;
+    public $riskIndicators = null;
 
     /**
      * Gets as overallScore

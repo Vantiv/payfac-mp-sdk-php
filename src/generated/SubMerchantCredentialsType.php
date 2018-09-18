@@ -14,17 +14,17 @@ class SubMerchantCredentialsType
     /**
      * @property string $username
      */
-    private $username = null;
+    public $username = null;
 
     /**
      * @property string $password
      */
-    private $password = null;
+    public $password = null;
 
     /**
      * @property \DateTime $passwordExpirationDate
      */
-    private $passwordExpirationDate = null;
+    public $passwordExpirationDate = null;
 
     /**
      * Gets as username

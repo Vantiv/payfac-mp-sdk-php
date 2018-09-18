@@ -14,7 +14,7 @@ class LegalEntityAgreementCreateRequestType
     /**
      * @property \src\generated\LegalEntityAgreementType $legalEntityAgreement
      */
-    private $legalEntityAgreement = null;
+    public $legalEntityAgreement = null;
 
     /**
      * Gets as legalEntityAgreement

@@ -14,37 +14,37 @@ class LegalEntityResponseType extends ResponseType
     /**
      * @property boolean $duplicate
      */
-    private $duplicate = null;
+    public $duplicate = null;
 
     /**
      * @property string $legalEntityId
      */
-    private $legalEntityId = null;
+    public $legalEntityId = null;
 
     /**
      * @property integer $responseCode
      */
-    private $responseCode = null;
+    public $responseCode = null;
 
     /**
      * @property string $responseDescription
      */
-    private $responseDescription = null;
+    public $responseDescription = null;
 
     /**
      * @property string $originallegalEntityId
      */
-    private $originallegalEntityId = null;
+    public $originallegalEntityId = null;
 
     /**
      * @property string $originallegalEntityStatus
      */
-    private $originallegalEntityStatus = null;
+    public $originallegalEntityStatus = null;
 
     /**
      * @property \src\generated\BackgroundCheckResults $backgroundCheckResults
      */
-    private $backgroundCheckResults = null;
+    public $backgroundCheckResults = null;
 
     /**
      * Gets as duplicate

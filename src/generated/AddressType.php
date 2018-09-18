@@ -14,32 +14,32 @@ class AddressType
     /**
      * @property string $streetAddress1
      */
-    private $streetAddress1 = null;
+    public $streetAddress1 = null;
 
     /**
      * @property string $streetAddress2
      */
-    private $streetAddress2 = null;
+    public $streetAddress2 = null;
 
     /**
      * @property string $city
      */
-    private $city = null;
+    public $city = null;
 
     /**
      * @property string $stateProvince
      */
-    private $stateProvince = null;
+    public $stateProvince = null;
 
     /**
      * @property string $postalCode
      */
-    private $postalCode = null;
+    public $postalCode = null;
 
     /**
      * @property string $countryCode
      */
-    private $countryCode = null;
+    public $countryCode = null;
 
     /**
      * Gets as streetAddress1

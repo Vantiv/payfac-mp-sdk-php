@@ -14,7 +14,7 @@ class ResponseType
     /**
      * @property integer $transactionId
      */
-    private $transactionId = null;
+    public $transactionId = null;
 
     /**
      * Gets as transactionId

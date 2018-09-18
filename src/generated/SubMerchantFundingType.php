@@ -14,17 +14,17 @@ class SubMerchantFundingType
     /**
      * @property boolean $enabled
      */
-    private $enabled = null;
+    public $enabled = null;
 
     /**
      * @property string $feeProfile
      */
-    private $feeProfile = null;
+    public $feeProfile = null;
 
     /**
      * @property string $fundingSubmerchantId
      */
-    private $fundingSubmerchantId = null;
+    public $fundingSubmerchantId = null;
 
     /**
      * Gets as enabled

@@ -14,57 +14,57 @@ class LegalEntityCreateRequestType
     /**
      * @property string $legalEntityName
      */
-    private $legalEntityName = null;
+    public $legalEntityName = null;
 
     /**
      * @property string $legalEntityType
      */
-    private $legalEntityType = null;
+    public $legalEntityType = null;
 
     /**
      * @property string $legalEntityOwnershipType
      */
-    private $legalEntityOwnershipType = null;
+    public $legalEntityOwnershipType = null;
 
     /**
      * @property string $doingBusinessAs
      */
-    private $doingBusinessAs = null;
+    public $doingBusinessAs = null;
 
     /**
      * @property string $taxId
      */
-    private $taxId = null;
+    public $taxId = null;
 
     /**
      * @property string $contactPhone
      */
-    private $contactPhone = null;
+    public $contactPhone = null;
 
     /**
      * @property string $annualCreditCardSalesVolume
      */
-    private $annualCreditCardSalesVolume = null;
+    public $annualCreditCardSalesVolume = null;
 
     /**
      * @property boolean $hasAcceptedCreditCards
      */
-    private $hasAcceptedCreditCards = null;
+    public $hasAcceptedCreditCards = null;
 
     /**
      * @property \src\generated\AddressType $address
      */
-    private $address = null;
+    public $address = null;
 
     /**
      * @property \src\generated\LegalEntityPrincipalType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * @property string $yearsInBusiness
      */
-    private $yearsInBusiness = null;
+    public $yearsInBusiness = null;
 
     /**
      * Gets as legalEntityName

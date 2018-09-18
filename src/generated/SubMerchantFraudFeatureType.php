@@ -14,7 +14,7 @@ class SubMerchantFraudFeatureType
     /**
      * @property boolean $enabled
      */
-    private $enabled = null;
+    public $enabled = null;
 
     /**
      * Gets as enabled

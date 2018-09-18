@@ -14,12 +14,12 @@ class PaypageCredentialType
     /**
      * @property string $username
      */
-    private $username = null;
+    public $username = null;
 
     /**
      * @property string $paypageId
      */
-    private $paypageId = null;
+    public $paypageId = null;
 
     /**
      * Gets as username

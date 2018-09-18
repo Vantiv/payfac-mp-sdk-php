@@ -14,7 +14,7 @@ class LegalEntityAgreementCreateResponseType extends ResponseType
     /**
      * @property boolean $duplicate
      */
-    private $duplicate = null;
+    public $duplicate = null;
 
     /**
      * Gets as duplicate

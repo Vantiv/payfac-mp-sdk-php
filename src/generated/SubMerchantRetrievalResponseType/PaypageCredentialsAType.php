@@ -11,7 +11,7 @@ class PaypageCredentialsAType
     /**
      * @property \src\generated\PaypageCredentialType[] $paypageCredential
      */
-    private $paypageCredential = array(
+    public $paypageCredential = array(
         
     );
 

@@ -14,37 +14,37 @@ class LegalEntityPrincipalUpdatableType
     /**
      * @property integer $principalId
      */
-    private $principalId = null;
+    public $principalId = null;
 
     /**
      * @property string $title
      */
-    private $title = null;
+    public $title = null;
 
     /**
      * @property string $emailAddress
      */
-    private $emailAddress = null;
+    public $emailAddress = null;
 
     /**
      * @property string $contactPhone
      */
-    private $contactPhone = null;
+    public $contactPhone = null;
 
     /**
      * @property \src\generated\PrincipalAddressType $address
      */
-    private $address = null;
+    public $address = null;
 
     /**
      * @property integer $stakePercent
      */
-    private $stakePercent = null;
+    public $stakePercent = null;
 
     /**
      * @property \src\generated\PrincipalBackgroundCheckFieldsType $backgroundCheckFields
      */
-    private $backgroundCheckFields = null;
+    public $backgroundCheckFields = null;
 
     /**
      * Gets as principalId

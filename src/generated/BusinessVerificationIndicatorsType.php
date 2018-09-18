@@ -14,37 +14,37 @@ class BusinessVerificationIndicatorsType
     /**
      * @property boolean $nameVerified
      */
-    private $nameVerified = null;
+    public $nameVerified = null;
 
     /**
      * @property boolean $addressVerified
      */
-    private $addressVerified = null;
+    public $addressVerified = null;
 
     /**
      * @property boolean $cityVerified
      */
-    private $cityVerified = null;
+    public $cityVerified = null;
 
     /**
      * @property boolean $stateVerified
      */
-    private $stateVerified = null;
+    public $stateVerified = null;
 
     /**
      * @property boolean $zipVerified
      */
-    private $zipVerified = null;
+    public $zipVerified = null;
 
     /**
      * @property boolean $phoneVerified
      */
-    private $phoneVerified = null;
+    public $phoneVerified = null;
 
     /**
      * @property boolean $taxIdVerified
      */
-    private $taxIdVerified = null;
+    public $taxIdVerified = null;
 
     /**
      * Gets as nameVerified

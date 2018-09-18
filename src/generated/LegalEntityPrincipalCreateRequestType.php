@@ -14,7 +14,7 @@ class LegalEntityPrincipalCreateRequestType
     /**
      * @property \src\generated\LegalEntityPrincipalType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * Gets as principal

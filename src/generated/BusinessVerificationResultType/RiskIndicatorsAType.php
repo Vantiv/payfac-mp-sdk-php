@@ -11,7 +11,7 @@ class RiskIndicatorsAType
     /**
      * @property \src\generated\PotentialRiskIndicatorType[] $riskIndicator
      */
-    private $riskIndicator = array(
+    public $riskIndicator = array(
         
     );
 

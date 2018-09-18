@@ -14,17 +14,17 @@ class LegalEntityPrincipalDeleteResponseType extends ResponseType
     /**
      * @property string $legalEntityId
      */
-    private $legalEntityId = null;
+    public $legalEntityId = null;
 
     /**
      * @property integer $principalId
      */
-    private $principalId = null;
+    public $principalId = null;
 
     /**
      * @property string $responseDescription
      */
-    private $responseDescription = null;
+    public $responseDescription = null;
 
     /**
      * Gets as legalEntityId

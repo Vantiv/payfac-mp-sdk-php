@@ -14,17 +14,17 @@ class SubMerchantECheckFeatureType
     /**
      * @property boolean $enabled
      */
-    private $enabled = null;
+    public $enabled = null;
 
     /**
      * @property string $eCheckCompanyName
      */
-    private $eCheckCompanyName = null;
+    public $eCheckCompanyName = null;
 
     /**
      * @property string $eCheckBillingDescriptor
      */
-    private $eCheckBillingDescriptor = null;
+    public $eCheckBillingDescriptor = null;
 
     /**
      * Gets as enabled

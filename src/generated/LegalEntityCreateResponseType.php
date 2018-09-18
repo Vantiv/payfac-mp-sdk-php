@@ -14,7 +14,7 @@ class LegalEntityCreateResponseType extends LegalEntityResponseType
     /**
      * @property \src\generated\LegalEntityPrincipalCreateResponseType $principal
      */
-    private $principal = null;
+    public $principal = null;
 
     /**
      * Gets as principal
