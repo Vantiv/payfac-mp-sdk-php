@@ -131,8 +131,8 @@ For the list of changes, check out the [changelog](https://github.com/Vantiv/pay
 
 ## Authors
 
-* [**Ayush Agarwal**](https://github.com/ayush17agarwal)
-* [**Chen Chang**](https://github.com/cc6980312)
+* [**Ajjunesh Raju**](https://github.com/Ajjunesh)
+* [**Kartik Dave**](https://github.com/davekartik24)
 
 See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-java/contributors) who participated in this project.
 
