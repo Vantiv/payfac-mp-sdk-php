@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * Created by PhpStorm.
  * User: araju
@@ -127,7 +129,7 @@ function generate_legalEntityCreateRequest(){
 }
 
 
-function test_communication(){
+function test_communication_post(){
     $url_suffix = 'legalentity';
     $request_body_raw = generate_legalEntityCreateRequest();
     $request_body = convert_object_to_xml('legalEntityCreateRequest',$request_body_raw);
@@ -135,7 +137,22 @@ function test_communication(){
     $request = &new Communication();
     $response = $request->httpPostRequest($url_suffix,$request_body);
 
+
+
+    print_r($response);
+
+    print 'principalId';
+    print $response['principal']['principalId'];
+}
+
+function test_communication_get(){
+    $id = '123';
+    $url_suffix = 'legalentity/'.$id;
+
+    $request = &new Communication();
+    $response = $request->httpGetRequest($url_suffix);
     print_r($response);
 }
 
-test_communication();
+//test_communication_post();
+test_communication_get();

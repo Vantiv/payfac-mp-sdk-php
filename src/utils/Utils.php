@@ -8,6 +8,11 @@
 
 namespace src\utils;
 
+use PEAR;
+use XML_Unserializer;
+
+require 'XML/Unserializer.php';
+
 class Utils
 {
 
@@ -55,15 +60,18 @@ class Utils
         return $config;
     }
 
-    public static function generateResponseObject($data, $useSimpleXml)
+    public static function generateResponseObject($xml)
     {
-        if ($useSimpleXml) {
-            $respObj = simplexml_load_string($data);
-        } else {
-            $respObj = XmlParser::domParser($data);
-        }
+        $unserializer = &new XML_Unserializer();
 
-        return $respObj;
+        $status = $unserializer->unserialize($xml);
+
+        if (PEAR::isError($status)) {
+            echo 'Error: ' . $status->getMessage();
+        } else {
+            $data = $unserializer->getUnserializedData();
+        }
+        return $data;
     }
 
     public static function printToConsole($prefixMessage, $message, $printXml, $neuterXml = false)
