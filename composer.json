@@ -32,8 +32,6 @@
     "test": "phpunit"
   },
   "autoload": {
-    "psr-0": {
-      "cnp\\sdk": "."
-    }
+    "classmap": ["src/","vendor/"]
   }
 }

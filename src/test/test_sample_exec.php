@@ -15,15 +15,6 @@ use src\generated\PrincipalAddressType;
 use src\utils\Communication;
 
 require './../../vendor/autoload.php';
-require './../generated/AddressType.php';
-require './../generated/LegalEntityCreateRequestType.php';
-require './../generated/LegalEntityPrincipalType.php';
-require './../generated/PrincipalAddressType.php';
-require './../utils/Communication.php';
-require './../utils/Utils.php';
-require './../utils/XmlParser.php';
-require './../PayFac.php';
-require 'XML/Serializer.php';
 
 
 function add_declaration($xml){
@@ -37,14 +28,14 @@ function convert_object_to_xml($className, $object){
     $root_attributes['xmlns'] = 'http://payfac.vantivcnp.com/api/merchant/onboard';
 
     $options = array(
-        XML_SERIALIZER_OPTION_ROOT_NAME            => $className,
-        XML_SERIALIZER_OPTION_INDENT               => '    ',
-        XML_SERIALIZER_OPTION_LINEBREAKS           => "\n",
-        XML_SERIALIZER_OPTION_IGNORE_NULL          => true,
-        XML_SERIALIZER_OPTION_CLASSNAME_AS_TAGNAME => $className,
-        XML_SERIALIZER_OPTION_XML_DECL_ENABLED     => true,
-        XML_SERIALIZER_OPTION_XML_ENCODING         => 'utf-8',
-        XML_SERIALIZER_OPTION_ROOT_ATTRIBS         => $root_attributes
+        'rootName'            => $className,
+        'indent'               => '    ',
+        'linebreak'           => "\n",
+        'ignoreNull'          => true,
+        'classAsTagName' => $className,
+        'addDecl'     => true,
+        'encoding'         => 'utf-8',
+        'rootAttributes'         => $root_attributes
     );
 
     $serializer = &new XML_Serializer($options);
@@ -136,9 +127,6 @@ function test_communication_post(){
 
     $request = &new Communication();
     $response = $request->httpPostRequest($url_suffix,$request_body);
-
-
-
     print_r($response);
 
     print 'principalId';
@@ -154,5 +142,5 @@ function test_communication_get(){
     print_r($response);
 }
 
-//test_communication_post();
-test_communication_get();
+test_communication_post();
+//test_communication_get();
