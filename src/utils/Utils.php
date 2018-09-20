@@ -63,6 +63,36 @@ class Utils
         return $config;
     }
 
+    public static function get_requestbody_from_xml($className, $object){
+
+        $root_attributes = array();
+        $root_attributes['xmlns'] = 'http://payfac.vantivcnp.com/api/merchant/onboard';
+
+        $options = array(
+            'rootName'            => $className,
+            'indent'               => '    ',
+            'linebreak'           => "\n",
+            'ignoreNull'          => true,
+            'classAsTagName' => $className,
+            'addDecl'     => true,
+            'encoding'         => 'utf-8',
+            'rootAttributes'         => $root_attributes
+        );
+
+        $serializer = &new XML_Serializer($options);
+
+        $result = $serializer->serialize($object);
+
+
+        if ($result === true) {
+            $xml = $serializer->getSerializedData();
+            //replace the header with standalone attribute
+            $request_body = str_replace("<?xml version=\"1.0\" encoding=\"utf-8\"?>", "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>",$xml);
+            return $request_body;
+        }
+
+    }
+
     public static function generateResponseObject($xml)
     {
         $unserializer = &new XML_Unserializer();
