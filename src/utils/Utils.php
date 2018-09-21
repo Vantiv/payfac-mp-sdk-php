@@ -8,6 +8,7 @@
 
 namespace src\utils;
 use PEAR;
+use XML_Serializer;
 use XML_Unserializer;
 
 define('CURRENT_XML_VERSION', '13.0.0');
@@ -80,6 +81,13 @@ class Utils
         );
 
         $serializer = &new XML_Serializer($options);
+
+        $serializer->setOption(XML_SERIALIZER_OPTION_SCALAR_AS_ATTRIBUTES, array(
+            "fraud" => array("enabled"),
+            "amexAcquired" => array("enabled"),
+            "eCheck" =>array("enabled"),
+            "subMerchantFunding" =>array("enabled")
+        ));
 
         $result = $serializer->serialize($object);
 

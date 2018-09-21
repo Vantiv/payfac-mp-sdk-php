@@ -8,6 +8,8 @@
 
 namespace src\utils;
 
+use src\exceptions\PayFacWebException;
+
 class Communication
 {
 
