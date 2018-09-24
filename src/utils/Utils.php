@@ -133,4 +133,28 @@ class Utils
         return $xml->schemaValidate("./../../schema/merchant-onboard-api-v13.xsd");
     }
 
+    public static function convertDateTime($data){
+
+        $pattern = array();
+        $pattern[0] = "(<date>(.*)</date>)";
+        $pattern[1] = "(<timezone_type>(.*)</timezone_type>)";
+        $pattern[2] = "(<timezone>(.*)</timezone>)";
+
+        preg_match_all($pattern[0], $data, $matches0, PREG_OFFSET_CAPTURE);
+        preg_match_all($pattern[1], $data, $matches1, PREG_OFFSET_CAPTURE);
+        preg_match_all($pattern[2], $data, $matches2, PREG_OFFSET_CAPTURE);
+
+        $count = 0;
+        foreach($matches0[0] as $match){
+
+            $data = str_replace($match[0],$matches0[1][$count][0],$data);
+            $data = str_replace($matches1[0][$count][0],"",$data);
+            $data = str_replace($matches2[0][$count][0],"",$data);
+            $count++;
+        }
+
+        return $data;
+
+    }
+
 }
