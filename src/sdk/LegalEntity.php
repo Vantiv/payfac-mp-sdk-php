@@ -2,18 +2,19 @@
 /**
  * Created by PhpStorm.
  * User: cchang
- * Date: 9/20/18
- * Time: 11:30 AM
+ * Date: 9/24/18
+ * Time: 2:34 PM
  */
 
 namespace src\sdk;
 
+
 use src\utils\Communication;
 use src\utils\Utils;
 
-class submerchant{
-    const SERVICE_ROUTE1 = "/legalentity/";
-    const SERVICE_ROUTE2 = "/submerchant";
+class LegalEntity
+{
+    const SERVICE_ROUTE1 = "/legalentity";
 
     public function __construct($treeResponse = false, $overrides = array())
     {
@@ -30,13 +31,13 @@ class submerchant{
     }
 
     ////////////////////////////////////////////////////////////////////
-    //                          Submerchant API:                      //
+    //                          LegalEntity API:                      //
     ////////////////////////////////////////////////////////////////////
 
-    public function postSubmerchant($legalEntityId, $subMerchantCreateRequest)
+    public function postLegalEntity($legalEntityCreateRequest )
     {
-        $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2;
-        $request_body = Utils::get_requestbody_from_xml('subMerchantCreateRequest', $subMerchantCreateRequest);
+        $url_suffix = self::SERVICE_ROUTE1;
+        $request_body = Utils::get_requestbody_from_xml('legalEntityCreateRequest ', $legalEntityCreateRequest );
 
         if (Utils::validateXML($request_body)) {
             return $this->communication->httpPostRequest($url_suffix, $request_body);
@@ -45,10 +46,10 @@ class submerchant{
         }
     }
 
-    public function putSubmerchant($legalEntityId, $submerchantId, $subMerchantUpdateRequest)
+    public function putSubmerchant($legalEntityId, $legalEntityUpdateRequest)
     {
-        $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2 . "/" . $submerchantId;
-        $request_body = Utils::get_requestbody_from_xml('subMerchantUpdateRequest', $subMerchantUpdateRequest);
+        $url_suffix = self::SERVICE_ROUTE1 ."/" . $legalEntityId;
+        $request_body = Utils::get_requestbody_from_xml('legalEntityUpdateRequest', $legalEntityUpdateRequest);
 
         if (Utils::validateXML($request_body)) {
             return $this->communication->httpPutRequest($url_suffix, $request_body);
@@ -58,9 +59,9 @@ class submerchant{
     }
 
 
-    public function getSubmerchant($legalEntityId, $submerchantId)
+    public function getSubmerchant($legalEntityId)
     {
-        $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2 . "/" . $submerchantId;
+        $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId;
 
         return $this->communication->httpGetRequest($url_suffix);
 

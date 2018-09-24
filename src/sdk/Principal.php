@@ -9,8 +9,6 @@
 namespace src\sdk;
 
 
-use DOMDocument;
-use src\exceptions\SchemaErrorHandler;
 use src\utils\Communication;
 use src\utils\Utils;
 
@@ -23,8 +21,6 @@ class Principal
     {
         $this->config = Utils::getConfig($overrides);
         $this->communication = new Communication($treeResponse, $overrides);
-        $this->xml = new DOMDocument();
-        $this->schemaErrorHandler = &new SchemaErrorHandler();
 
         // Enable user error handling
         libxml_use_internal_errors(true);
@@ -43,7 +39,6 @@ class Principal
     {
         $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2;
         $request_body = Utils::get_requestbody_from_xml('legalEntityPrincipalCreateRequest', $principalCreateRequest);
-        $this->xml->loadXML($request_body);
 
         if (Utils::validateXML($request_body)) {
             return $this->communication->httpPostRequest($url_suffix, $request_body);

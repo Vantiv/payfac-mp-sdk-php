@@ -25,8 +25,7 @@ class Communication
         $this->config = Utils::getConfig($overrides);
         $this->url = $this->config['url'];
         $this->printXml = $this->config['printXml'];
-        $this->neuterXml = $this->config['neuterXml'];
-//        print $this->config['url'];
+        $this->neuterXml = $this->config['neuterXml'];;
     }
 
     public function httpGetRequest($urlSuffix)
@@ -50,11 +49,9 @@ class Communication
     public function httpPostRequest($urlSuffix, $requestBody)
     {
         $requestUrl = $this->url.$urlSuffix;
-//        print "requestURL ->".$requestUrl."\n";
         Utils::printToConsole("\nPOST request to: ", $requestUrl, $this->printXml, $this->neuterXml);
         $headers = array("Content-Type: " . CONTENT_TYPE, "Accept: " . ACCEPT);
         Utils::printToConsole("\nRequest body: ", $requestBody, $this->printXml, $this->neuterXml);
-//        print "Request body ->".$requestBody."\n";
         $options = array(CURLOPT_POSTFIELDS => $requestBody);
         return $this->getHttpResponse($requestUrl, "POST", $headers, $options);
     }
@@ -83,21 +80,10 @@ class Communication
     private function execHttpRequest($requestUrl, $requestType, $headers = array(), $options = array())
     {
         $ch = $this->generateBaseCurlHandler($requestUrl, $requestType, $headers, $options);
-        ###
-//        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        ###
         $response = curl_exec($ch);
-        /*$info = curl_getinfo($ch);
-        print "request ->".$info['request_header'];
-        print "requestBody ->".$options[CURLOPT_POSTFIELDS]."\n";*/
-        ###
         $statusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-        ###
-       /* print "response -> \n".$response;
-        print "statusCode -> \n".$statusCode;
-        print "contentType -> \n".$contentType;*/
-        ###
+
         curl_close($ch);
         return array('response' => $response, 'statusCode' => $statusCode, 'contentType' => $contentType);
     }
