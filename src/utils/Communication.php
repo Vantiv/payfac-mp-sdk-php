@@ -59,7 +59,7 @@ class Communication
         return $this->getHttpResponse($requestUrl, "POST", $headers, $options);
     }
 
-    public function httpDeleteRequest($urlSuffix, $requestBody)
+    public function httpDeleteRequest($urlSuffix)
     {
         $requestUrl = $this->url . $urlSuffix;
         Utils::printToConsole("\nDELETE request to: ", $requestUrl, $this->printXml, $this->neuterXml);

@@ -7,6 +7,7 @@
  */
 
 namespace src\utils;
+use DOMDocument;
 use PEAR;
 use XML_Serializer;
 use XML_Unserializer;
@@ -106,9 +107,9 @@ class Utils
         $unserializer = &new XML_Unserializer();
 
         $status = $unserializer->unserialize($xml);
-
         if (PEAR::isError($status)) {
             echo 'Error: ' . $status->getMessage();
+            return;
         } else {
             $data = $unserializer->getUnserializedData();
         }
@@ -125,4 +126,11 @@ class Utils
             echo "\n" . $prefixMessage . $message;
         }
     }
+
+    public static function validateXML($request){
+        $xml = new DOMDocument();
+        $xml->loadXML($request);
+        return $xml->schemaValidate("./../../schema/merchant-onboard-api-v13.xsd");
+    }
+
 }

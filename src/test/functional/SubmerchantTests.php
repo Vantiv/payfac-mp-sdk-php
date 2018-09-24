@@ -13,7 +13,6 @@ use src\generated\AddressType;
 use src\generated\AddressUpdatableType;
 use src\generated\SubMerchantAmexAcquiredFeatureType;
 use src\generated\SubMerchantCreateRequest;
-use src\generated\SubMerchantCreateRequestType;
 use src\generated\SubMerchantECheckFeature;
 use src\generated\SubMerchantECheckFeatureType;
 use src\generated\SubMerchantFraudFeature;
