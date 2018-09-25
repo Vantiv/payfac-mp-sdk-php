@@ -9,6 +9,8 @@
 namespace src\utils;
 
 use src\exceptions\PayFacWebException;
+use Symfony\Component\Debug\Exception\FatalErrorException;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
 
 class Communication
 {
@@ -26,6 +28,17 @@ class Communication
         $this->url = $this->config['url'];
         $this->printXml = $this->config['printXml'];
         $this->neuterXml = $this->config['neuterXml'];;
+    }
+
+    public function setConf($overrideConf)
+    {
+        $this->config = $overrideConf;
+        $this->url = $overrideConf['url'];
+    }
+
+    public function getConf()
+    {
+        return $this->config;
     }
 
     public function httpGetRequest($urlSuffix)
@@ -101,7 +114,7 @@ class Communication
         } else if ($this->isInValidStatus($statusCode)) {
             if (strpos($contentType, CONTENT_TYPE) !== false) {
                 Utils::printToConsole("\nError Response: ", $httpResponse, $this->printXml, $this->neuterXml);
-                $errorResponse = Utils::generateResponseObject($httpResponse, false);
+                $errorResponse = XmlParser::domParser($httpResponse);
                 $errorMessageList = XmlParser::getValueListByTagName($errorResponse, 'error');
                 $errorMessage = $this->generateErrorMessage($errorMessageList);
                 throw new PayFacWebException($errorMessage, $statusCode, $errorMessageList);
