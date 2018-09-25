@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/Vantiv/cnp-chargeback-sdk-php.svg?branch=2.x)](https://travis-ci.org/Vantiv/cnp-chargeback-sdk-php)
-[![codecov](https://codecov.io/gh/Vantiv/cnp-chargeback-sdk-php/branch/2.x/graph/badge.svg)](https://codecov.io/gh/Vantiv/cnp-chargeback-sdk-php)
+[![Build Status](https://travis-ci.org/Vantiv/payfac-mp-sdk-php.svg?branch=2.x)](https://travis-ci.org/Vantiv/payfac-mp-sdk-php)
+[![codecov](https://codecov.io/gh/Vantiv/payfac-mp-sdk-php/branch/master/graph/badge.svg)](https://codecov.io/gh/Vantiv/payfac-mp-sdk-php)
 
 
 # payfac-mp-sdk-php
@@ -49,7 +49,7 @@ Add a require for each and every class that's going to be used.
 
 1. Configure the SDK
 ```bash
-cd into cnp/sdk
+cd into payfac-mp-sdk-php
 php Setup.php
 ```
 
@@ -65,7 +65,7 @@ php your_file
 1. Install the Vantiv eCommerce PHP SDK from git. 
 
 ```bash
-git clone git://github.com/Vantiv/cnp-chargeback-sdk-php.git
+git clone git://github.com/Vantiv/payfac-mp-sdk-php.git
 php ~/composer.phar install
 ```
 
@@ -73,7 +73,7 @@ php ~/composer.phar install
 2. Once the SDK is downloaded run our setup program to generate a configuration file.
 
 ```bash
-cd cnp-chargeback-sdk-php/lib
+cd payfac-mp-sdk-php/lib
 php Setup.php
 ```
 
@@ -93,21 +93,80 @@ List of configuration parameters along with their values can be found [here](htt
 
 ```php
 
- // Retrieve information about a chargeback
-$chargebackRetrieval = new cnp\sdk\ChargebackRetrieval();
-$response = $chargebackRetrieval->getChargebacksByDate("2018-01-01");
+ // Retrieve information
+ $response = $this->legalEntity->getLegalEntity(2018);
 
-// You may also use a tree-oriented style to get the response values:
-$chargebackRetrieval = new cnp\sdk\ChargebackRetrieval($treeResponse = true);
-$response = $chargebackRetrieval->getChargebackByCaseId("12345000");
+// Post new Principal:
+$principal = new src\sdk\Principal();
+$principalCreateRequest = new LegalEntityPrincipalCreateRequest();
+$principalInRequest = new LegalEntityPrincipalType();
+$principalInRequest->setTitle("Mr.");
+$principalInRequest->setFirstName("First");
+$principalInRequest->setLastName("Last");
+$principalInRequest->setEmailAddress("abc@gmail.com");
+$principalInRequest->setSsn("123450015");
+$principalInRequest->setDateOfBirth("1980-10-12");
+$address = new PrincipalAddressType();
+$address->setStreetAddress1("p2 street address 1");
+$address->setStreetAddress2("p2 street address 2");
+$address->setCity("Boston2");
+$address->setStateProvince("MA");
+$address->setPostalCode("01892");
+$address->setCountryCode("USA");
+$principalInRequest->setAddress($this->address);
+$principalInRequest->setStakePercent(100);
+$principalCreateRequest->setPrincipal($this->principalInRequest);
 
-// Update chargeback case
-$chargebackUpdate = new cnp\sdk\ChargebackUpdate();
-$chargebackUpdate->representCase("12345000", "Note on activity", $representment_amount = 1000);
+$response =  $principal->postPrincipal(2018, $principalCreateRequest);
 
-// Manage supporting documents for chargeback case
-$chargebackDocument = new cnp\sdk\ChargebackDocument();
-$chargebackDocument->uploadDocument("12345000", "invoice.pdf");
+// Update LegalEntity
+              $legalEntity= new src\sdk\LegalEntity();
+              $legalEntityUpdateXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
+                                       <legalEntityUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">
+                                       	<address>
+                                       		<streetAddress1>LE Street Address 1</streetAddress1>
+                                       		<streetAddress2>LE Street Address 2</streetAddress2>
+                                       		<city>LE City</city>
+                                       		<stateProvince>MA</stateProvince>
+                                       		<postalCode>01730</postalCode>
+                                       		<countryCode>USA</countryCode>
+                                       	</address>
+                                       	<contactPhone>9785550101</contactPhone>
+                                       	<doingBusinessAs>Other Name Co.</doingBusinessAs>
+                                       	<annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume>
+                                       	<hasAcceptedCreditCards>true</hasAcceptedCreditCards>
+                                       	<principal>
+                                       		<principalId>9</principalId>
+                                       		<title>CEO</title>
+                                       		<emailAddress>jdoe@mail.net</emailAddress>
+                                       		<contactPhone>9785551234</contactPhone>
+                                       		<address>
+                                       			<streetAddress1>p street address 1</streetAddress1>
+                                       			<streetAddress2>p street address 2</streetAddress2>
+                                       			<city>Boston</city>
+                                       			<stateProvince>MA</stateProvince>
+                                       			<postalCode>01890</postalCode>
+                                       			<countryCode>USA</countryCode>
+                                       		</address>
+                                       		<backgroundCheckFields>
+                                       			<firstName>p first</firstName>
+                                       			<lastName>p last</lastName>
+                                       			<ssn>123459876</ssn>
+                                       			<dateOfBirth>1980-10-12</dateOfBirth>
+                                       			<driversLicense>892327409832</driversLicense>
+                                       			<driversLicenseState>MA</driversLicenseState>
+                                       		</backgroundCheckFields>
+                                       	</principal>
+                                       	<backgroundCheckFields>
+                                       		<legalEntityName>Company Name</legalEntityName>
+                                       		<legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType>
+                                       		<taxId>123456789</taxId>
+                                       	</backgroundCheckFields>
+                                       	<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>
+                                       	<yearsInBusiness>10</yearsInBusiness>
+                                       </legalEntityUpdateRequest>";
+              $legalEntityUpdateRequest= Utils::generateResponseObject($this->legalEntityUpdateXml);
+              $response = $legalEntity->putLegalEntity(2010,$this->legalEntityUpdateRequest);
 
 ```
 
@@ -141,7 +200,7 @@ See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-java
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-java/blob/13.x/LICENSE.md) file for details
 
 ## Examples
-More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-java/tree/13.x/src/test/java/com/mp/sdk)
+More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-php/tree/master/src/test/functional)
 
 ## Support
 Please contact [Vantiv eCommerce](https://developer.vantiv.com/community/ecommerce) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  Support can also be reached at sdksupport@Vantiv.com
