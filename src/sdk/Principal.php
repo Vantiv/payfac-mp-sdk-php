@@ -9,6 +9,7 @@
 namespace src\sdk;
 
 
+use src\exceptions\SchemaErrorHandler;
 use src\utils\Communication;
 use src\utils\Utils;
 
@@ -21,6 +22,7 @@ class Principal
     {
         $this->config = Utils::getConfig($overrides);
         $this->communication = new Communication($treeResponse, $overrides);
+        $this->schemaErrorHandler = new SchemaErrorHandler();
 
         // Enable user error handling
         libxml_use_internal_errors(true);

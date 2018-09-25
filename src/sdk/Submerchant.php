@@ -10,16 +10,18 @@ namespace src\sdk;
 
 use src\utils\Communication;
 use src\utils\Utils;
+use src\exceptions\SchemaErrorHandler;
 
 class submerchant{
     const SERVICE_ROUTE1 = "/legalentity/";
     const SERVICE_ROUTE2 = "/submerchant";
 
+
     public function __construct($treeResponse = false, $overrides = array())
     {
         $this->config = Utils::getConfig($overrides);
         $this->communication = new Communication($treeResponse, $overrides);
-
+        $this->schemaErrorHandler = new SchemaErrorHandler();
         // Enable user error handling
         libxml_use_internal_errors(true);
     }

@@ -9,6 +9,7 @@
 namespace src\sdk;
 
 
+use src\exceptions\SchemaErrorHandler;
 use src\utils\Communication;
 use src\utils\Utils;
 
@@ -20,6 +21,7 @@ class LegalEntity
     {
         $this->config = Utils::getConfig($overrides);
         $this->communication = new Communication($treeResponse, $overrides);
+        $this->schemaErrorHandler = new SchemaErrorHandler();
 
         // Enable user error handling
         libxml_use_internal_errors(true);
@@ -38,7 +40,7 @@ class LegalEntity
     {
         $url_suffix = self::SERVICE_ROUTE1;
         $request_body = Utils::get_requestbody_from_xml('legalEntityCreateRequest ', $legalEntityCreateRequest );
-
+        $request_body = Utils::convertDateTime($request_body);
         if (Utils::validateXML($request_body)) {
             return $this->communication->httpPostRequest($url_suffix, $request_body);
         } else {
@@ -46,11 +48,11 @@ class LegalEntity
         }
     }
 
-    public function putSubmerchant($legalEntityId, $legalEntityUpdateRequest)
+    public function putLegalEntity($legalEntityId, $legalEntityUpdateRequest)
     {
         $url_suffix = self::SERVICE_ROUTE1 ."/" . $legalEntityId;
         $request_body = Utils::get_requestbody_from_xml('legalEntityUpdateRequest', $legalEntityUpdateRequest);
-
+        $request_body = Utils::convertDateTime($request_body);
         if (Utils::validateXML($request_body)) {
             return $this->communication->httpPutRequest($url_suffix, $request_body);
         } else {
@@ -59,9 +61,9 @@ class LegalEntity
     }
 
 
-    public function getSubmerchant($legalEntityId)
+    public function getLegalEntity($legalEntityId)
     {
-        $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId;
+        $url_suffix = self::SERVICE_ROUTE1 ."/". $legalEntityId;
 
         return $this->communication->httpGetRequest($url_suffix);
 
