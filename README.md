@@ -80,12 +80,6 @@ php Setup.php
 Running the above commands will create a configuration file in the lib directory. 
 
 
-3. Create a symlink to the SDK
-
-```bash
-ln -s /path/to/sdk /var/www/html/nameOfLink
-```
-
 ### Configuration
 List of configuration parameters along with their values can be found [here](https://gist.github.com/VantivSDK/8b7dd606230ec65b36eba457df4443de).
 
