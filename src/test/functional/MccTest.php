@@ -9,14 +9,14 @@
 namespace src\test\functional;
 
 
-use src\sdk\MCC;
+use src\sdk\Mcc;
 
-class MCCTest extends \PHPUnit_Framework_TestCase
+class MccTest extends \PHPUnit_Framework_TestCase
 {
     private $MCC;
 
     public function setUp(){
-        $this->MCC= new MCC();
+        $this->MCC= new Mcc();
     }
 
     public function testGetMCC()

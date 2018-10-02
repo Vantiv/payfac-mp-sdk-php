@@ -9,10 +9,10 @@
 namespace src\test\unit;
 
 /*require_once ("./../../../vendor/autoload.php");
-use src\sdk\MCC;
+use src\sdk\Mcc;
 use src\utils\Utils;*/
 
-class MCCTest extends \PHPUnit_Framework_TestCase
+class MccTest extends \PHPUnit_Framework_TestCase
 {
     private $MCC;
     private $mock;
@@ -21,7 +21,7 @@ class MCCTest extends \PHPUnit_Framework_TestCase
 
 
    /* public function setUp(){
-        $this->MCC= new MCC();
+        $this->Mcc= new Mcc();
         $this->mock = $this->getMock('src\utils\Communication');
         $this->response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
                            <approvedMccResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">
@@ -41,8 +41,8 @@ class MCCTest extends \PHPUnit_Framework_TestCase
             ->with($this->stringEndsWith("/mcc"))
             ->will($this->returnValue($this->responseObj));
 
-        $this->MCC->setCommunication($this->mock);
-        $response = $this->MCC->getMCC();
+        $this->Mcc->setCommunication($this->mock);
+        $response = $this->Mcc->getMCC();
         $this->assertNotNull($response["transactionId"]);
         $this->assertEquals("5967",$response["approvedMccs"]["approvedMcc"][0]);
         $this->assertEquals("5970",$response["approvedMccs"]["approvedMcc"][1]);
