@@ -120,67 +120,54 @@ $principalCreateRequest->setPrincipal($this->principalInRequest);
 $response =  $principal->postPrincipal(2018, $principalCreateRequest);
 
 // Update LegalEntity
-              $legalEntity= new src\sdk\LegalEntity();
-              $legalEntityUpdateXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
-                                       <legalEntityUpdateRequest xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">
-                                       	<address>
-                                       		<streetAddress1>LE Street Address 1</streetAddress1>
-                                       		<streetAddress2>LE Street Address 2</streetAddress2>
-                                       		<city>LE City</city>
-                                       		<stateProvince>MA</stateProvince>
-                                       		<postalCode>01730</postalCode>
-                                       		<countryCode>USA</countryCode>
-                                       	</address>
-                                       	<contactPhone>9785550101</contactPhone>
-                                       	<doingBusinessAs>Other Name Co.</doingBusinessAs>
-                                       	<annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume>
-                                       	<hasAcceptedCreditCards>true</hasAcceptedCreditCards>
-                                       	<principal>
-                                       		<principalId>9</principalId>
-                                       		<title>CEO</title>
-                                       		<emailAddress>jdoe@mail.net</emailAddress>
-                                       		<contactPhone>9785551234</contactPhone>
-                                       		<address>
-                                       			<streetAddress1>p street address 1</streetAddress1>
-                                       			<streetAddress2>p street address 2</streetAddress2>
-                                       			<city>Boston</city>
-                                       			<stateProvince>MA</stateProvince>
-                                       			<postalCode>01890</postalCode>
-                                       			<countryCode>USA</countryCode>
-                                       		</address>
-                                       		<backgroundCheckFields>
-                                       			<firstName>p first</firstName>
-                                       			<lastName>p last</lastName>
-                                       			<ssn>123459876</ssn>
-                                       			<dateOfBirth>1980-10-12</dateOfBirth>
-                                       			<driversLicense>892327409832</driversLicense>
-                                       			<driversLicenseState>MA</driversLicenseState>
-                                       		</backgroundCheckFields>
-                                       	</principal>
-                                       	<backgroundCheckFields>
-                                       		<legalEntityName>Company Name</legalEntityName>
-                                       		<legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType>
-                                       		<taxId>123456789</taxId>
-                                       	</backgroundCheckFields>
-                                       	<legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType>
-                                       	<yearsInBusiness>10</yearsInBusiness>
-                                       </legalEntityUpdateRequest>";
-              $legalEntityUpdateRequest= Utils::generateResponseObject($this->legalEntityUpdateXml);
-              $response = $legalEntity->putLegalEntity(2010,$this->legalEntityUpdateRequest);
+$legalEntityUpdate = new LegalEntityUpdateRequest();
+$address = new AddressUpdatableType();
+$address->setStreetAddress1("LE street address 1");
+$address->setStreetAddress2("LE street address 2");
+$address->setCity("LE city");
+$address->setStateProvince("MA");
+$address->setPostalCode("01892");
+$address->setCountryCode("USA");
+$legalEntityUpdate -> setAddress($address);
+$legalEntityUpdate -> setContactPhone("9785550101");
+$legalEntityUpdate -> setDoingBusinessAs("Other Name Co.");
+$legalEntityUpdate -> setAnnualCreditCardSalesVolume(10000000);
+$legalEntityUpdate -> setHasAcceptedCreditCards(true);
+$principal = new LegalEntityPrincipalUpdatableType();
+$principal -> setPrincipalId(9);
+$principal -> setTitle("CEO");
+$principal -> setEmailAddress("jdoe@mail.ney");
+$principal -> setContactPhone("9785551234");
+$principalAddressType = new PrincipalAddressType();
+$principalAddressType->setStreetAddress1("p street address 1");
+$principalAddressType->setStreetAddress2("p street address 2");
+$principalAddressType->setCity("Boston");
+$principalAddressType->setStateProvince("MA");
+$principalAddressType->setPostalCode("01892");
+$principalAddressType->setCountryCode("USA");
+$principal -> setAddress($principalAddressType);
+$principalBackgroundCheckField = new PrincipalBackgroundCheckFieldsType();
+$principalBackgroundCheckField -> setFirstName("p first");
+$principalBackgroundCheckField -> setLastName("p last");
+$principalBackgroundCheckField -> setSsn("123459876");
+$dateTime = new \DateTime("1980-10-12");
+$principalBackgroundCheckField -> setDateOfBirth($dateTime);
+$principalBackgroundCheckField -> setDriversLicense("892327409832");
+$principalBackgroundCheckField -> setDriversLicenseState("MA");
+$principal -> setBackgroundCheckFields($principalBackgroundCheckField);
+$legalEntityBackgroundCheckFieldsType = new LegalEntityBackgroundCheckFieldsType();
+$legalEntityBackgroundCheckFieldsType -> setLegalEntityName("Company Name");
+$legalEntityBackgroundCheckFieldsType -> setLegalEntityType("INDIVIDUAL_SOLE_PROPRIETORSHIP");
+$legalEntityBackgroundCheckFieldsType -> setTaxId("123456789");
+$legalEntityUpdate -> setBackgroundCheckFields($legalEntityBackgroundCheckFieldsType);
+$legalEntityUpdate -> setLegalEntityOwnershipType("PUBLIC");
+$legalEntityUpdate -> setYearsInBusiness("10");
 
-```
+$response = $this->legalEntity->putLegalEntity(2010,$legalEntityUpdate);
 
-```bash
- php your_sample_name
 ```
 
 NOTE: you may have to change the path to match that of your filesystems.  
-
-If you get an error like:
-```bash
-PHP Fatal error:  require_once(): Failed opening required '/home/user/git/payfac-mp-sdk-php/../lib/Chargeback.php' (include_path='.:/usr/share/pear:/usr/share/php') in /home/user/git/payfac-mp-sdk-php/foo.php on line 2
-```
-You need to change the second line of your script to load the real location of Chargeback.php
 
 ## Versioning
 For the versions available, see the [tags on this repository](https://github.com/vantiv/payfac-mp-sdk-java/tags). 
