@@ -8,7 +8,8 @@
 
 namespace src\test\unit;
 
-use src\sdk\PayfacMcc;
+require_once './../../sdk/Mcc.php';
+use src\sdk\Mcc;
 use src\utils\Utils;
 
 class MccTest extends \PHPUnit_Framework_TestCase
@@ -20,7 +21,7 @@ class MccTest extends \PHPUnit_Framework_TestCase
 
 
     public function setUp(){
-        $this->PayfacMcc= new PayfacMcc();
+        $this->PayfacMcc= new Mcc();
         $this->mock = $this->getMock('src\utils\Communication');
         $this->response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
                            <approvedMccResponse xmlns=\"http://payfac.vantivcnp.com/api/merchant/onboard\">

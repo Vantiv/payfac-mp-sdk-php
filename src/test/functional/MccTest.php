@@ -8,14 +8,15 @@
 
 namespace src\test\functional;
 
-use src\sdk\PayfacMcc;
+require_once './../../sdk/Mcc.php';
+use src\sdk\Mcc;
 
 class MccTest extends \PHPUnit_Framework_TestCase
 {
     private $PayfacMcc;
 
     public function setUp(){
-        $this->PayfacMcc= new PayfacMcc();
+        $this->PayfacMcc= new Mcc();
     }
 
     public function testGetMCC()

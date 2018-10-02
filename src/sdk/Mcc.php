@@ -12,7 +12,7 @@ namespace src\sdk;
 use src\utils\Communication;
 use src\utils\Utils;
 
-class PayfacMcc
+class Mcc
 {
     const SERVICE_ROUTE1 = "/mcc";
 
@@ -31,7 +31,7 @@ class PayfacMcc
     }
 
     ////////////////////////////////////////////////////////////////////
-    //                            PayfacMcc API:                            //
+    //                            Mcc API:                            //
     ////////////////////////////////////////////////////////////////////
 
     public function getMCC()
