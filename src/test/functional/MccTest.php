@@ -8,22 +8,21 @@
 
 namespace src\test\functional;
 
-
-use src\sdk\Mcc;
+//use src\sdk\Mcc;
 
 class MccTest extends \PHPUnit_Framework_TestCase
 {
-    private $MCC;
+    private $Mcc;
 
-    public function setUp(){
-        $this->MCC= new Mcc();
-    }
-
-    public function testGetMCC()
-    {
-        $response = $this->MCC->getMCC();
-        $this->assertNotNull($response["transactionId"]);
-        $this->assertEquals("5967",$response["approvedMccs"]["approvedMcc"][0]);
-        $this->assertEquals("5970",$response["approvedMccs"]["approvedMcc"][1]);
-    }
+//    public function setUp(){
+//        $this->Mcc= new Mcc();
+//    }
+//
+//    public function testGetMCC()
+//    {
+//        $response = $this->Mcc->getMCC();
+//        $this->assertNotNull($response["transactionId"]);
+//        $this->assertEquals("5967",$response["approvedMccs"]["approvedMcc"][0]);
+//        $this->assertEquals("5970",$response["approvedMccs"]["approvedMcc"][1]);
+//    }
 }
