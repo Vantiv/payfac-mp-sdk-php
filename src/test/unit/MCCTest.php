@@ -8,9 +8,9 @@
 
 namespace src\test\unit;
 
-require_once ("./../../../vendor/autoload.php");
+/*require_once ("./../../../vendor/autoload.php");
 use src\sdk\MCC;
-use src\utils\Utils;
+use src\utils\Utils;*/
 
 class MCCTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,7 +20,7 @@ class MCCTest extends \PHPUnit_Framework_TestCase
     private $responseObj;
 
 
-    public function setUp(){
+   /* public function setUp(){
         $this->MCC= new MCC();
         $this->mock = $this->getMock('src\utils\Communication');
         $this->response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
@@ -32,9 +32,9 @@ class MCCTest extends \PHPUnit_Framework_TestCase
                                </approvedMccs>
                            </approvedMccResponse>";
         $this->responseObj = Utils::generateResponseObject($this->response);
-    }
+    }*/
 
-    public function testGetMCC()
+    /*public function testGetMCC()
     {
         $this->mock->expects($this->once())
             ->method('httpGetRequest')
@@ -46,5 +46,5 @@ class MCCTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($response["transactionId"]);
         $this->assertEquals("5967",$response["approvedMccs"]["approvedMcc"][0]);
         $this->assertEquals("5970",$response["approvedMccs"]["approvedMcc"][1]);
-    }
+    }*/
 }
