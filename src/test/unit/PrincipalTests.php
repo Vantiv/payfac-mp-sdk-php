@@ -8,7 +8,7 @@
 
 namespace src\test\unit;
 
-
+require_once ("./../../../vendor/autoload.php");
 use src\generated\LegalEntityPrincipalCreateRequest;
 use src\generated\LegalEntityPrincipalType;
 use src\generated\PrincipalAddressType;
