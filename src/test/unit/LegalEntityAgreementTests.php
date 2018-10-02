@@ -8,7 +8,6 @@
 
 namespace src\test\unit;
 
-
 use src\sdk\LegalEntityAgreement;
 use src\utils\Utils;
 
