@@ -8,7 +8,7 @@
 
 namespace src\test\unit;
 
-require_once ("./../../../vendor/autoload.php");
+
 use src\generated\AddressType;
 use src\generated\AddressUpdatableType;
 use src\generated\SubMerchantAmexAcquiredFeatureType;

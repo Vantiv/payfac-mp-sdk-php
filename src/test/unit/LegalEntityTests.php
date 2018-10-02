@@ -8,7 +8,7 @@
 
 namespace src\test\unit;
 
-require_once ("./../../../vendor/autoload.php");
+
 use src\sdk\LegalEntity;
 use src\utils\Utils;
 
