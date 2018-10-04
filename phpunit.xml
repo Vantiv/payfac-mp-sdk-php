@@ -2,10 +2,10 @@
 <phpunit colors="true">
     <testsuites>
         <testsuite name="Unit_Test">
-            <directory>./src/test/unit</directory>
+            <directory suffix=".php">./src/test/unit</directory>
         </testsuite>
         <testsuite name="Functional_Test">
-            <directory>./src/test/functional</directory>
+            <directory suffix=".php">./src/test/functional</directory>
         </testsuite>
     </testsuites>
 </phpunit>
