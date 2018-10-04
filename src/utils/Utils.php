@@ -81,7 +81,7 @@ class Utils
             'rootAttributes'         => $root_attributes
         );
 
-        $serializer = &new XML_Serializer($options);
+        $serializer = new XML_Serializer($options);
 
         $serializer->setOption(XML_SERIALIZER_OPTION_SCALAR_AS_ATTRIBUTES, array(
             "fraud" => array("enabled"),
@@ -104,7 +104,7 @@ class Utils
 
     public static function generateResponseObject($xml)
     {
-        $unserializer = &new XML_Unserializer();
+        $unserializer = new XML_Unserializer();
 
         $status = $unserializer->unserialize($xml);
         if (PEAR::isError($status)) {
