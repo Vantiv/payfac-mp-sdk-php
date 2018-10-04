@@ -8,7 +8,6 @@
 
 namespace src\test\functional;
 
-require __DIR__.'/../../sdk/Mcc.php';
 use src\sdk\Mcc;
 
 class MccTest extends \PHPUnit_Framework_TestCase

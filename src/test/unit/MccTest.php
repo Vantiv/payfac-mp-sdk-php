@@ -8,7 +8,6 @@
 
 namespace src\test\unit;
 
-require_once './../../sdk/Mcc.php';
 use src\sdk\Mcc;
 use src\utils\Utils;
 
