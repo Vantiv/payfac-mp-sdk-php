@@ -21,7 +21,6 @@ use src\generated\SubMerchantPrimaryContactUpdatableType;
 use src\generated\SubMerchantUpdateRequest;
 use src\sdk\submerchant;
 
-require './../../../vendor/autoload.php';
 
 
 class SubmerchantTests extends \PHPUnit_Framework_TestCase
