@@ -1,5 +1,5 @@
 {
-  "name": "worldpay/payfac-mp-sdk-php",
+  "name": "vantiv/payfac-mp-sdk-php",
   "type": "library",
   "description": "The WorldPay PHP SDK is a PHP implementation of the [WorldPay](https://developer.vantiv.com/community/ecommerce). XML API. This SDK was created to make it as easy as possible to connect process your payments with WorldPay",
   "keywords": [
