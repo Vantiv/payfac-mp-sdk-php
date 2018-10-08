@@ -130,12 +130,7 @@ class Utils
     public static function validateXML($request){
         $xml = new DOMDocument();
         $xml->loadXML($request);
-//        print "\nschema file location\n";
-        $filepath =  __DIR__."/merchant-onboard-api-v13.xsd";
-//        if(file_exists($filepath))
-//            print "\nyes, the files exists\n";
-//        else
-//            $filepath = __DIR__."/../../schema/merchant-onboard-api-v13.xsd";
+        $filepath =  __DIR__."/../schema/merchant-onboard-api-v13.xsd";
         if(file_exists($filepath)) print "\n\n\nexist!!!!!!!!!!!!!!!\n\n\n";
         return $xml->schemaValidate( $filepath);
     }
