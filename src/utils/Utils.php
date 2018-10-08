@@ -130,7 +130,7 @@ class Utils
     public static function validateXML($request){
         $xml = new DOMDocument();
         $xml->loadXML($request);
-        return $xml->schemaValidate("./../../schema/merchant-onboard-api-v13.xsd");
+        return $xml->schemaValidate("./../schema/merchant-onboard-api-v13.xsd");
     }
 
     public static function convertDateTime($data){
