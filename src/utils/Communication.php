@@ -143,6 +143,7 @@ class Communication
             CURLOPT_SSLVERSION => 6);
 
         curl_setopt_array($ch, $defaultOptions + $options);
+
         return $ch;
     }
 
