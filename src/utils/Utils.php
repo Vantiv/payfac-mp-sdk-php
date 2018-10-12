@@ -131,7 +131,6 @@ class Utils
         $xml = new DOMDocument();
         $xml->loadXML($request);
         $filepath =  __DIR__."/../schema/merchant-onboard-api-v13.xsd";
-        if(file_exists($filepath)) print "\n\n\nexist!!!!!!!!!!!!!!!\n\n\n";
         return $xml->schemaValidate( $filepath);
     }
 

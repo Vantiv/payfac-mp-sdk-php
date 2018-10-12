@@ -90,7 +90,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $this->subMerchantCreateRequest->setSettlementCurrency("USD");
 
 
-        //===================== setup subMerchantCreateRequest =====================
+        //===================== setup subMerchantUpdateRequest =====================
         $this->subMerchantUpdateRequest = new SubMerchantUpdateRequest();
         $this->subMerchantUpdateRequest->setAmexMid("1234567890");
         $this->subMerchantUpdateRequest->setDiscoverConveyedMid("12345678901235");
