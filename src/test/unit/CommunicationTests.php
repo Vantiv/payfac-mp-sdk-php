@@ -22,7 +22,6 @@ class CommunicationTests extends \PHPUnit_Framework_TestCase
 
     public function testSetConf(){
         $conf = $this->Communication->getConf();
-        $this->assertEquals("user",$conf["username"]);
         $newConf = array('username'=>"user123",
                 'password'=>"pass",
                 'currency_merchant_map [\'DEFAULT\']'=>123,
