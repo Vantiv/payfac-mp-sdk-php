@@ -8,7 +8,6 @@
 
 namespace src\test\functional;
 
-require './../../../vendor/autoload.php';
 
 use src\sdk\LegalEntity;
 use src\utils\Utils;

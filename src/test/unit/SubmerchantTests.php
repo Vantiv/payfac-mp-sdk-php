@@ -156,11 +156,11 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $subMerchantCreateRequest->setBankRoutingNumber("840123124");
         $subMerchantCreateRequest->setBankAccountNumber("84012312415");
         $subMerchantCreateRequest->setPspMerchantId("123456");
-        $fraud = &new subMerchantFraudFeature();
+        $fraud = new subMerchantFraudFeature();
         $fraud->setEnabled(true);
         $subMerchantCreateRequest->setFraud($fraud);
 
-        $amexAcquired = &new SubMerchantAmexAcquiredFeatureType();
+        $amexAcquired = new SubMerchantAmexAcquiredFeatureType();
         $amexAcquired->setEnabled(true);
         $subMerchantCreateRequest->setAmexAcquired($amexAcquired);
 
@@ -174,7 +174,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
 
         $subMerchantCreateRequest->setAddress($address);
 
-        $primaryContact = &new SubMerchantPrimaryContactType();
+        $primaryContact = new SubMerchantPrimaryContactType();
         $primaryContact->setFirstName("John");
         $primaryContact->setLastName("Dow");
         $primaryContact->setEmailAddress("John.Doe@company.com");
@@ -183,7 +183,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
 
         $subMerchantCreateRequest->setCreateCredentials(true);
 
-        $eCkeck = &new SubMerchantECheckFeatureType();
+        $eCkeck = new SubMerchantECheckFeatureType();
         $eCkeck->setECheckCompanyName("Company Name");
         $eCkeck->setECheckBillingDescriptor("978555222");
         $eCkeck->setEnabled(true);
@@ -230,21 +230,21 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $updateAddress->setPostalCode("01730");
         $subMerchantUpdateRequest->setAddress($updateAddress);
 
-        $updatePrimaryContact = &new SubMerchantPrimaryContactUpdatableType();
+        $updatePrimaryContact = new SubMerchantPrimaryContactUpdatableType();
         $updatePrimaryContact->setFirstName("John");
         $updatePrimaryContact->setLastName("Dow");
         $updatePrimaryContact->setPhone("978555222");
         $subMerchantUpdateRequest->setPrimaryContact($updatePrimaryContact);
 
-        $fraud = &new subMerchantFraudFeature();
+        $fraud = new subMerchantFraudFeature();
         $fraud->setEnabled(true);
         $subMerchantUpdateRequest->setFraud($fraud);
 
-        $amexAcquired = &new SubMerchantAmexAcquiredFeatureType();
+        $amexAcquired = new SubMerchantAmexAcquiredFeatureType();
         $amexAcquired->setEnabled(true);
         $subMerchantUpdateRequest->setAmexAcquired($amexAcquired);
 
-        $updateECkeck = &new SubMerchantECheckFeature();
+        $updateECkeck = new SubMerchantECheckFeature();
         $updateECkeck->setEnabled(true);
         $subMerchantUpdateRequest->setECheck($updateECkeck);
 

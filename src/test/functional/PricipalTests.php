@@ -13,7 +13,6 @@ use src\generated\LegalEntityPrincipalType;
 use src\generated\PrincipalAddressType;
 use src\sdk\Principal;
 
-require './../../../vendor/autoload.php';
 
 class PricipalTests extends \PHPUnit_Framework_TestCase
 {

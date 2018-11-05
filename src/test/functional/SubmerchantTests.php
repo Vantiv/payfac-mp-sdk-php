@@ -21,7 +21,6 @@ use src\generated\SubMerchantPrimaryContactUpdatableType;
 use src\generated\SubMerchantUpdateRequest;
 use src\sdk\submerchant;
 
-require './../../../vendor/autoload.php';
 
 
 class SubmerchantTests extends \PHPUnit_Framework_TestCase
@@ -55,11 +54,11 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $this->subMerchantCreateRequest->setBankRoutingNumber("840123124");
         $this->subMerchantCreateRequest->setBankAccountNumber("84012312415");
         $this->subMerchantCreateRequest->setPspMerchantId("123456");
-        $this->fraud = &new subMerchantFraudFeature();
+        $this->fraud = new subMerchantFraudFeature();
         $this->fraud->setEnabled(true);
         $this->subMerchantCreateRequest->setFraud($this->fraud);
 
-        $this->amexAcquired = &new SubMerchantAmexAcquiredFeatureType();
+        $this->amexAcquired = new SubMerchantAmexAcquiredFeatureType();
         $this->amexAcquired->setEnabled(true);
         $this->subMerchantCreateRequest->setAmexAcquired($this->amexAcquired);
 
@@ -73,7 +72,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
 
         $this->subMerchantCreateRequest->setAddress($this->address);
 
-        $this->primaryContact = &new SubMerchantPrimaryContactType();
+        $this->primaryContact = new SubMerchantPrimaryContactType();
         $this->primaryContact->setFirstName("John");
         $this->primaryContact->setLastName("Dow");
         $this->primaryContact->setEmailAddress("John.Doe@company.com");
@@ -82,7 +81,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
 
         $this->subMerchantCreateRequest->setCreateCredentials(true);
 
-        $this->eCkeck = &new SubMerchantECheckFeatureType();
+        $this->eCkeck = new SubMerchantECheckFeatureType();
         $this->eCkeck->setECheckCompanyName("Company Name");
         $this->eCkeck->setECheckBillingDescriptor("978555222");
         $this->eCkeck->setEnabled(true);
@@ -91,7 +90,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $this->subMerchantCreateRequest->setSettlementCurrency("USD");
 
 
-        //===================== setup subMerchantCreateRequest =====================
+        //===================== setup subMerchantUpdateRequest =====================
         $this->subMerchantUpdateRequest = new SubMerchantUpdateRequest();
         $this->subMerchantUpdateRequest->setAmexMid("1234567890");
         $this->subMerchantUpdateRequest->setDiscoverConveyedMid("12345678901235");
@@ -112,7 +111,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $this->updateAddress->setPostalCode("01730");
         $this->subMerchantUpdateRequest->setAddress($this->updateAddress);
 
-        $this->updatePrimaryContact = &new SubMerchantPrimaryContactUpdatableType();
+        $this->updatePrimaryContact = new SubMerchantPrimaryContactUpdatableType();
         $this->updatePrimaryContact->setFirstName("John");
         $this->updatePrimaryContact->setLastName("Dow");
         $this->updatePrimaryContact->setPhone("978555222");
@@ -121,7 +120,7 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $this->subMerchantUpdateRequest->setFraud($this->fraud);
         $this->subMerchantUpdateRequest->setAmexAcquired($this->amexAcquired);
 
-        $this->updateECkeck = &new SubMerchantECheckFeature();
+        $this->updateECkeck = new SubMerchantECheckFeature();
         $this->updateECkeck->setEnabled(true);
         $this->subMerchantUpdateRequest->setECheck($this->updateECkeck);
 
