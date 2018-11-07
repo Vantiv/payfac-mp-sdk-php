@@ -148,9 +148,22 @@ class Utils
         $count = 0;
         foreach($matches0[0] as $match){
 
-            $data = str_replace($match[0],$matches0[1][$count][0],$data);
-            $data = str_replace($matches1[0][$count][0],"",$data);
-            $data = str_replace($matches2[0][$count][0],"",$data);
+            $date = substr($matches0[1][$count][0],0,10);
+            $time = substr($matches0[1][$count][0],11);
+            $timezone = str_replace("<timezone>",".",$matches2[0][$count][0]);
+            $timezone = str_replace("</timezone>","",$timezone);
+            $timezone_new = substr($timezone,"1");
+
+            $newDateTime = $date."T".$time.$timezone_new;
+
+            $data = str_replace($match[0],"##REPLACE##",$data);
+            $data = str_replace($matches1[0][$count][0],'',$data);
+            $data = str_replace($matches2[0][$count][0],'',$data);
+
+            $regex = "/>[\s]*##REPLACE##[\s]*</";
+            preg_match($regex,$data,$replace_match);
+
+            $data = str_replace($replace_match,">".$newDateTime."<",$data);
             $count++;
         }
 
