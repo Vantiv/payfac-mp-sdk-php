@@ -22,5 +22,13 @@ script:
  - echo 'neuterXml=0'>>$PAYFAC_MP_CONFIG_FILE
  - cat $PAYFAC_MP_CONFIG_FILE
  - $BUILD_DIR/vendor/bin/phpunit --log-junit $BUILD_DIR/reports/tests.xml --coverage-clover=coverage.xml
+
+deploy:
+ provider: releases
+ api_key: $GITHUB_TOKEN
+ skip_cleanup: true
+ on:
+  tags: true
+
 after_success:
  - bash <(curl -s https://codecov.io/bash)
