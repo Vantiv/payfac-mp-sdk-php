@@ -139,9 +139,9 @@ class LegalEntityResponseType extends ResponseType
      *
      * @return string
      */
-    public function getOriginallegalEntityId()
+    public function getOriginalLegalEntityId()
     {
-        return $this->originallegalEntityId;
+        return $this->originalLegalEntityId;
     }
 
     /**
@@ -161,9 +161,9 @@ class LegalEntityResponseType extends ResponseType
      *
      * @return string
      */
-    public function getOriginallegalEntityStatus()
+    public function getOriginalLegalEntityStatus()
     {
-        return $this->originallegalEntityStatus;
+        return $this->originalLegalEntityStatus;
     }
 
     /**
@@ -172,9 +172,9 @@ class LegalEntityResponseType extends ResponseType
      * @param string $originallegalEntityStatus
      * @return self
      */
-    public function setOriginallegalEntityStatus($originallegalEntityStatus)
+    public function setOriginalLegalEntityStatus($originalLegalEntityStatus)
     {
-        $this->originallegalEntityStatus = $originallegalEntityStatus;
+        $this->originalLegalEntityStatus = $originalLegalEntityStatus;
         return $this;
     }
 
