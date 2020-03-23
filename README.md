@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/Vantiv/payfac-mp-sdk-php.svg?branch=13.x)](https://travis-ci.org/Vantiv/payfac-mp-sdk-php)
 [![codecov](https://codecov.io/gh/Vantiv/payfac-mp-sdk-php/branch/13.x/graph/badge.svg)](https://codecov.io/gh/Vantiv/payfac-mp-sdk-php)
 
 
