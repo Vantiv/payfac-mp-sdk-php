@@ -122,6 +122,16 @@ class SubMerchantCreateRequestType
     public $settlementCurrency = null;
 
     /**
+     * @property string $sdkVersion
+     */
+    public $sdkVersion = null;
+
+    /**
+     * @property string $language
+     */
+    public $language = null;
+
+    /**
      * Gets as merchantName
      *
      * @return string
@@ -604,6 +614,50 @@ class SubMerchantCreateRequestType
         $this->settlementCurrency = $settlementCurrency;
         return $this;
     }
+
+    /**
+     *Gets as sdkVersion
+     *
+     * @return string
+     */
+    public function getSdkVersion()
+    {
+        return $this->sdkVersion;
+    }
+
+    /**
+     * Sets a new sdkVersion
+     *
+     * @param string $sdkVersion
+     * @return self
+     */
+    public function setSdkVersion($sdkVersion)
+    {
+        $this->sdkVersion = $sdkVersion;
+        return $this;
+    }
+
+    /**
+     *Gets as language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Sets a new language
+     *
+     * @param string $language
+     * @return self
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
+
 
 
 }
