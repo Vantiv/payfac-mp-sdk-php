@@ -38,6 +38,7 @@ class submerchant{
     public function postSubmerchant($legalEntityId, $subMerchantCreateRequest)
     {
         $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2;
+        Utils::appendVersionInfo($subMerchantCreateRequest);
         $request_body = Utils::get_requestbody_from_xml('subMerchantCreateRequest', $subMerchantCreateRequest);
 
         if (Utils::validateXML($request_body)) {

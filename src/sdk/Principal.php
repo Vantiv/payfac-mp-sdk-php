@@ -40,6 +40,7 @@ class Principal
     public function postPrincipal($legalEntityId, $principalCreateRequest)
     {
         $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2;
+        Utils::appendVersionInfo($principalCreateRequest);
         $request_body = Utils::get_requestbody_from_xml('legalEntityPrincipalCreateRequest', $principalCreateRequest);
 
         if (Utils::validateXML($request_body)) {
