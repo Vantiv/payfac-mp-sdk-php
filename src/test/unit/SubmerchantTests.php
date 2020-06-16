@@ -190,6 +190,8 @@ class SubmerchantTests extends \PHPUnit_Framework_TestCase
         $subMerchantCreateRequest->setECheck($eCkeck);
 
         $subMerchantCreateRequest->setSettlementCurrency("USD");
+        $subMerchantCreateRequest->setSdkVersion("13.1.0");
+        $subMerchantCreateRequest->setLanguage("php");
 
         $this->mock->expects($this->once())
             ->method('httpPostRequest')

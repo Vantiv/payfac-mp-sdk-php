@@ -39,6 +39,8 @@ class LegalEntityAgreementTests extends \PHPUnit_Framework_TestCase
                                                 		<manuallyEntered>false</manuallyEntered>
                                                 		<acceptanceDateTime>2017-02-11T12:00:00-06:00</acceptanceDateTime>
                                                 	</legalEntityAgreement>
+                                                	<sdkVersion>13.1.0</sdkVersion>
+                                                	<language>php</language>
                                                 </legalEntityAgreementCreateRequest>";
         $this->legalEntityAgreementCreateRequest= Utils::generateResponseObject($this->legalEntityAgreementCreateXml);
 

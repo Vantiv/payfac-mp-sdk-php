@@ -71,6 +71,8 @@ class LegalEntityTests extends \PHPUnit_Framework_TestCase
                                        	<stakePercent>33</stakePercent>
                                        </principal>
                                        <yearsInBusiness>12</yearsInBusiness>
+                                       <sdkVersion>13.1.0</sdkVersion>
+                                       <language>php</language>
                                        </legalEntityCreateRequest>";
         $this->legalEntityCreateRequest = Utils::generateResponseObject($this->legalEntityCreateXml);
 

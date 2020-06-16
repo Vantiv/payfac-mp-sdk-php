@@ -80,6 +80,8 @@ class PrincipalTests extends \PHPUnit_Framework_TestCase
         $principalInRequest->setAddress($address);
         $principalInRequest->setStakePercent(100);
         $principalCreateRequest->setPrincipal($principalInRequest);
+        $principalCreateRequest->setSdkVersion("13.1.0");
+        $principalCreateRequest->setLanguage("php");
 
         $this->mock->expects($this->once())
             ->method('httpPostRequest')
