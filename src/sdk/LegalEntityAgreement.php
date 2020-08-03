@@ -42,6 +42,7 @@ class LegalEntityAgreement
     public function postLegalEntityAgreement($legalEntityId, $legalEntityAgreementCreateRequest)
     {
         $url_suffix = self::SERVICE_ROUTE1 . $legalEntityId . self::SERVICE_ROUTE2;
+        Utils::appendVersionInfo($legalEntityAgreementCreateRequest);
         $request_body = Utils::get_requestbody_from_xml('legalEntityAgreementCreateRequest', $legalEntityAgreementCreateRequest);
         $request_body = Utils::convertDateTime($request_body);
         if (Utils::validateXML($request_body)) {

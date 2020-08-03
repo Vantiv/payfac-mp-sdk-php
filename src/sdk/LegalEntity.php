@@ -39,6 +39,7 @@ class LegalEntity
     public function postLegalEntity($legalEntityCreateRequest )
     {
         $url_suffix = self::SERVICE_ROUTE1;
+        Utils::appendVersionInfo($legalEntityCreateRequest);
         $request_body = Utils::get_requestbody_from_xml('legalEntityCreateRequest ', $legalEntityCreateRequest );
         $request_body = Utils::convertDateTime($request_body);
         if (Utils::validateXML($request_body)) {

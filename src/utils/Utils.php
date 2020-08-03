@@ -12,11 +12,11 @@ use PEAR;
 use XML_Serializer;
 use XML_Unserializer;
 
-define('CURRENT_XML_VERSION', '13.0.0');
-define('CURRENT_SDK_VERSION', 'PHP;13.0.0');
+define('CURRENT_XML_VERSION', '13.1.0');
+define('CURRENT_SDK_VERSION', 'PHP;13.1.0');
 define('CONFIG_LIST', 'username,password,url,proxy,printXml,neuterXml,timeout');
-define('CONTENT_TYPE', 'application/com.vantivcnp.payfac-v13+xml');
-define('ACCEPT', 'application/com.vantivcnp.payfac-v13+xml');
+define('CONTENT_TYPE', 'application/com.vantivcnp.payfac-v13.1+xml');
+define('ACCEPT', 'application/com.vantivcnp.payfac-v13.1+xml');
 
 class Utils
 {
@@ -130,7 +130,7 @@ class Utils
     public static function validateXML($request){
         $xml = new DOMDocument();
         $xml->loadXML($request);
-        $filepath =  __DIR__."/../schema/merchant-onboard-api-v13.xsd";
+        $filepath =  __DIR__."/../schema/merchant-onboard-api-v13.1.xsd";
         return $xml->schemaValidate( $filepath);
     }
 
@@ -171,4 +171,21 @@ class Utils
 
     }
 
+    public static function appendVersionInfo($request) {
+        $versionInfo = explode(";", CURRENT_SDK_VERSION);
+        $sdkVersion = $versionInfo[1];
+        $language = strtolower($versionInfo[0]);
+
+
+        //Hack to get around the fact that requests can come as array or object
+        if(is_array($request)){
+            $request["sdkVersion"] = $sdkVersion;
+            $request["language"] = $language;
+        }
+        
+        else if(is_object($request)){
+            $request->setSdkVersion($sdkVersion);
+            $request->setLanguage($language);
+        }
+    }
 }
